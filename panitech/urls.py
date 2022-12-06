@@ -14,7 +14,6 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 import sys
-# sys.path.append('/Users/user/Library/Python/3.9/bin')
 
 from django.contrib import admin
 from django.urls import path, include

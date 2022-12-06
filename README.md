@@ -8,8 +8,9 @@ As shown in the screenshot below, the app comes with two inputs and an index tab
 
 The second input is a search feature that is used to check the database for the short link and to return its coinciding full link, both of which are clickable. If the link is not in the databse, it will return "There are no records for that short link."
 
+
 <p float="middle">
-    <img src="/screenshot/LinkShortenerSS.PNG?raw=true" width="30%" height="30%">
+    <img src="screenshot/LinkShortenerSS.png?raw=true" width="90%" height="90%">
 </p>
 
 #### Approach:

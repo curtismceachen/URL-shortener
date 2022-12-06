@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Link Shortener</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<main>
+    <h2>Link Shortener</h2>
+    <form action="/create" method="POST">
+        {% csrf_token %}
+        <input type="text" name="link" id="input" placeholder="Enter Link">
+        <div class="buttons">
+            <button type="submit">Shorten</button>
+        </div>
+    </form>
+    <table>
+        <thead>
+          <tr>
+            <th>Full URL</th>
+            <th>Shortened URL</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for link in links %}
+          <tr>
+            <td>
+              <a href="//{{link.full_link}}">{{ link.full_link }}</a>
+            </td>
+            <td>
+              <a href="//{{link.full_link}}">{{ link.short_link }}</a>
+            </td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+</main>
+</html>

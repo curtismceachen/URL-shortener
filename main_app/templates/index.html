@@ -9,48 +9,44 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <main>
-    <h2>Link Shortener</h2>
-    <form action="/create" method="POST">
-        {% csrf_token %}
-        <h6><b>Shorten a Link</b></h6>
-        <input type="text" name="link" id="input" placeholder="Enter Link">
-        <div class="buttons">
-            <button type="submit">Shorten</button>
-        </div>
-    </form>
-    <h6>Or</h6>
-    <form action="/search" method="POST">
-        {% csrf_token %}
-        <h6><b>Check the Database for a Shortened Link</b></h6>
-        <input type="text" name="shortened_link" id="input" placeholder="Enter Short Link">
-        <div class="buttons">
-            <button type="submit"><i class="fa fa-search"></i>Search</button>
-        </div>
-    </form>
-    {% if search_result.full_link %}
-    <div>For the short link <a href="//{{search_result.full_link}}">{{search_result.short_link}}</a> the full link is <a href="//{{search_result.full_link}}">{{search_result.full_link}}.</a></div>
-    {% elif search_result %}
-    <div>{{search_result}}</div>
-    {% endif %}
-    <table>
-        <thead>
-          <tr>
-            <th>Full Link</th>
-            <th>Shortened Link</th>
-          </tr>
-        </thead>
-        <tbody>
-        {% for link in links %}
-          <tr>
-            <td>
-              <a href="//{{link.full_link}}">{{ link.full_link }}</a>
-            </td>
-            <td>
-              <a href="//{{link.full_link}}">{{ link.short_link }}</a>
-            </td>
-          </tr>
-        {% endfor %}
-        </tbody>
-      </table>
+  <h2>Link Shortener</h2>
+  <form action="/create" method="POST">
+    {% csrf_token %}
+    <h6><b>Shorten a Link</b></h6>
+    <input type="text" name="link" placeholder="Enter Link">
+    <button type="submit">Shorten</button>
+  </form>
+  <h6>Or</h6>
+  <form action="/search" method="POST">
+    {% csrf_token %}
+    <h6><b>Check the Database for a Shortened Link</b></h6>
+    <input type="text" name="shortened_link" placeholder="Enter Short Link">
+    <button type="submit"><i class="fa fa-search"></i>Search</button>
+  </form>
+  {% if search_result.full_link %}
+  <div>For the short link <a href="//{{search_result.full_link}}">{{search_result.short_link}}</a> the full link is <a href="//{{search_result.full_link}}">{{search_result.full_link}}.</a></div>
+  {% elif search_result %}
+  <div>{{search_result}}</div>
+  {% endif %}
+  <table>
+    <thead>
+      <tr>
+        <th>Full Link</th>
+        <th>Shortened Link</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for link in links %}
+      <tr>
+        <td>
+          <a href="//{{link.full_link}}">{{ link.full_link }}</a>
+        </td>
+        <td>
+          <a href="//{{link.full_link}}">{{ link.short_link }}</a>
+        </td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
 </main>
 </html>

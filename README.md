@@ -1,7 +1,7 @@
 ## URL Shortener (aka Link Shortener)
 
 #### Technologies Used:
-Python, Django, PostgreSQL, Docker, HTML, and Materialize.
+Python, Django, PostgreSQL, Docker, HTML, and Materialize for basic styling.
 
 #### How It Works:
 As shown in the screenshot below, the app comes with two inputs and an index table. The first input is for submitting a link/url, where after hitting submit, the application will shorten the link and return both the full link and the shortened link below in the index table. Both of these links are clickable and will take the user to the URL of the full link.
